@@ -1,0 +1,26 @@
+<%= form_with(model: @post, local: true,url: choose_new_or_edit) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="post_title">
+    <%= form.label :update_at %>
+    <%= form.text_field :update_at %>
+  </div>
+  <div class="post_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "つぶやき一覧画面にもどる", posts_path %>
