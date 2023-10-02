@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all
   end
@@ -23,6 +24,14 @@ class PostsController < ApplicationController
       render :new
       end
     end
+  end
+
+  def edit
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_path, notice:" つぶやきを削除しました！"
   end
 
   private
