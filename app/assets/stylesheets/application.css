@@ -6,6 +6,17 @@ html {
 body {
   height: 100%;
 }
+.header {
+  background-color: #6432ef;
+  height: 50px;
+  font-size: 1.5rem;
+}
+.header h1{
+  color: white;
+  text-align: center;
+}
+
+
 
 .container {
   width: 980px;
